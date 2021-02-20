@@ -210,6 +210,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Travel.cshtml" />
     <Content Include="Views\Menus\AllMenus.cshtml" />
+    <Content Include="Views\Shared\_NewsLetterPartial.cshtml" />
+    <Content Include="Views\Shared\FooterPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
