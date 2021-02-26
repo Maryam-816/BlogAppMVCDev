@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BlogMVCApp.Models.TagModel>
+
+<h3 class="sidebar-heading">Tag Cloud</h3>
+<ul class="tagcloud">
+    @foreach (var tag in Model)
+    {
+        <a href="#" class="tag-cloud-link">@tag.Name</a>
+    }
+    @*<a href="#" class="tag-cloud-link">animals</a>
+        <a href="#" class="tag-cloud-link">human</a>
+        <a href="#" class="tag-cloud-link">people</a>
+        <a href="#" class="tag-cloud-link">cat</a>
+        <a href="#" class="tag-cloud-link">dog</a>
+        <a href="#" class="tag-cloud-link">nature</a>
+        <a href="#" class="tag-cloud-link">leaves</a>
+        <a href="#" class="tag-cloud-link">food</a>*@
+</ul>

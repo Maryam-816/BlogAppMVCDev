@@ -32,13 +32,12 @@
     <link rel="stylesheet" href="~/Content/css/style.css">
 </head>
 <body>
-
     <div id="colorlib-page">
         <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
         <aside id="colorlib-aside" role="complementary" class="js-fullheight">
         @Html.Action("AllMenus", "Menus");
             
-            @{Html.RenderPartial("_FooterPartial"); }
+            @{Html.RenderPartial("FooterPartial"); }
         </aside> <!-- END COLORLIB-ASIDE -->
         @RenderBody();
         <!-- END COLORLIB-MAIN -->

@@ -1,4 +1,6 @@
-﻿@{ 
+﻿@model List<BlogMVCApp.Models.ArticleIndexModel>
+
+@{ 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -8,24 +10,11 @@
             <div class="row d-flex">
                 <div class="col-xl-8 py-5 px-md-5">
                     <div class="row pt-md-4">
-                        <div class="col-md-12">
-                            <div class="blog-entry ftco-animate d-md-flex">
-                                <a href="single.html" class="img img-2" style="background-image: url(/Content/images/image_1.jpg);"></a>
-                                <div class="text text-2 pl-md-4">
-                                    <h3 class="mb-2"><a href="single.html"></a></h3>
-                                    <div class="meta-wrap">
-                                        <p class="meta">
-                                            <span><i class="icon-calendar mr-2"></i>June 28, 2019</span>
-                                            <span><a href="single.html"><i class="icon-folder-o mr-2"></i>Travel</a></span>
-                                            <span><i class="icon-comment2 mr-2"></i>5 Comment</span>
-                                        </p>
-                                    </div>
-                                    <p class="mb-4"></p>
-                                    <p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
-                                </div>
-                            </div>
-                        </div>
 
+                        @foreach (var article in Model)
+                        {
+                            Html.RenderPartial("_SingleArticlePartial", article);
+                        }
                     </div><!-- END-->
                     <div class="row">
                         <div class="col">
@@ -53,14 +42,7 @@
                         </form>
                     </div>
                     <div class="sidebar-box ftco-animate">
-                        <h3 class="sidebar-heading">Categories</h3>
-                        <ul class="categories">
-                            <li><a href="#">Fashion <span>(6)</span></a></li>
-                            <li><a href="#">Technology <span>(8)</span></a></li>
-                            <li><a href="#">Travel <span>(2)</span></a></li>
-                            <li><a href="#">Food <span>(2)</span></a></li>
-                            <li><a href="#">Photography <span>(7)</span></a></li>
-                        </ul>
+                        @Html.Action("Categories", "Home");
                     </div>
 
                     <div class="sidebar-box ftco-animate">
@@ -101,17 +83,7 @@
                     </div>
 
                     <div class="sidebar-box ftco-animate">
-                        <h3 class="sidebar-heading">Tag Cloud</h3>
-                        <ul class="tagcloud">
-                            <a href="#" class="tag-cloud-link">animals</a>
-                            <a href="#" class="tag-cloud-link">human</a>
-                            <a href="#" class="tag-cloud-link">people</a>
-                            <a href="#" class="tag-cloud-link">cat</a>
-                            <a href="#" class="tag-cloud-link">dog</a>
-                            <a href="#" class="tag-cloud-link">nature</a>
-                            <a href="#" class="tag-cloud-link">leaves</a>
-                            <a href="#" class="tag-cloud-link">food</a>
-                        </ul>
+                        @Html.Action("Tags", "Home");
                     </div>
 
                     <div class="sidebar-box subs-wrap img py-4" style="background-image: url(/Content/images/bg_1.jpg);">

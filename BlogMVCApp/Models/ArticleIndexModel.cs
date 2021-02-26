@@ -19,6 +19,6 @@ namespace BlogMVCApp.Models
 
         public uint ViewCount { get; set; }
 
-        public ICollection<CategoryModel> Catigories { get; set; }
+        public IEnumerable<CategoryModel> Catigories { get; set; }
     }
 }
