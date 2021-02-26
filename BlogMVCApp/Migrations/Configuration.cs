@@ -151,7 +151,47 @@
 
             //});
 
-            //context.Tags.AddOrUpdate(new Tag { })
+            context.Tags.AddOrUpdate(
+            new Tag 
+            {
+                Id = 1,
+                Name = "Animals"
+            },
+            new Tag
+            {
+                Id = 2,
+                Name = "Human"
+            },
+            new Tag
+            {
+                Id = 3,
+                Name = "People"
+            },
+            new Tag
+            {
+                Id = 4,
+                Name = "Cat"
+            },
+            new Tag
+            {
+                Id = 5,
+                Name = "Dog"
+            },
+            new Tag
+            {
+                Id = 6,
+                Name = "Nature"
+            },
+            new Tag
+            {
+                Id = 7,
+                Name = "Leaves"
+            },
+            new Tag
+            {
+                Id = 8,
+                Name = "Food"
+            });
         }
     }
 }
