@@ -1,0 +1,17 @@
+﻿@model BlogMVCApp.Models.ArticleIndexModel
+@{
+    var article = Model;
+}
+
+<div class="block-21 mb-4 d-flex">
+    <a class="blog-img mr-4" style="background-image: url(/Content/images/@article.ImagePath);"></a>
+    <div class="text">
+        <h3 class="heading"><a href="#">@article.Title</a></h3>
+        <div class="meta">
+            <div><a href="#"><span class="icon-calendar"></span>@article.PublishTime</a></div>
+            <div><a href="#"><span class="icon-person"></span>@article.AuthorName</a></div>
+            <div><a href="#"><span class="icon-chat"></span>@article.CommentsCount</a></div>
+        </div>
+    </div>
+</div>
+

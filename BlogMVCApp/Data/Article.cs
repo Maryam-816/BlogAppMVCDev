@@ -4,20 +4,21 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BlogMVCApp.Models
+namespace BlogMVCApp.Data
 {
     public class Article
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(maximumLength: 100, MinimumLength = 2)]
+        [StringLength(maximumLength: 80, MinimumLength = 2)]
         public string Title { get; set; }
 
-        [Required]
-        [StringLength(maximumLength: 30, MinimumLength = 6)]
-        public string AuthorName { get; set; }
+        public Author Author { get; set; }
+
         public int AuthorId { get; set; }
+
         public DateTime PublishTime { get; set; }
+
         public DateTime WrittenTime { get; set; }
 
         [Required]
@@ -30,6 +31,7 @@ namespace BlogMVCApp.Models
         public string ShortDescription { get; set; }
 
         public uint ViewCount { get; set; }
+
         public ICollection<Comment> Comments { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
@@ -39,12 +41,5 @@ namespace BlogMVCApp.Models
         public Menu Menu { get; set; }
 
         public int MenuId { get; set; }
-
-        public Article()
-        {
-            Comments = new HashSet<Comment>();
-            Tags = new HashSet<Tag>();
-            Catigories = new HashSet<Category>();
-        }
     }
 }

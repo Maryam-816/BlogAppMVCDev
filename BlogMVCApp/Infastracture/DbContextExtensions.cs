@@ -24,8 +24,10 @@ namespace BlogMVCApp.Infastracture
                                                         ImagePath = x.ImagePath,
                                                         PublishTime = x.PublishTime,
                                                         Title = x.Title,
+                                                        CommentsCount = x.Comments.Count,
+                                                        AuthorName = x.Author.User.UserName
                                                         //ViewCount = x.ViewCount
-                                                    }).ToList();
+                                                    });
 
         }
 

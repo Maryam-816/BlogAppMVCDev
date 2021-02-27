@@ -165,7 +165,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Data\Article.cs" />
+    <Compile Include="Data\Author.cs" />
     <Compile Include="Data\BlogDbContext.cs" />
+    <Compile Include="Data\Category.cs" />
+    <Compile Include="Data\Comment.cs" />
+    <Compile Include="Data\Menu.cs" />
+    <Compile Include="Data\Tag.cs" />
+    <Compile Include="Data\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,16 +194,9 @@
       <DependentUpon>202102261735241_CategoryUpdated_ArticlesAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleIndexModel.cs" />
-    <Compile Include="Models\Author.cs" />
-    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryModel.cs" />
-    <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\Menu.cs" />
-    <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\TagModel.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +234,7 @@
     <Content Include="Views\Shared\_SingleArticlePartial.cshtml" />
     <Content Include="Views\Home\Categories.cshtml" />
     <Content Include="Views\Home\Tags.cshtml" />
+    <Content Include="Views\Shared\_PopularArticlePartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
