@@ -1,4 +1,5 @@
 ﻿using BlogMVCApp.Infastracture;
+using BlogMVCApp.Migrations;
 using BlogMVCApp.Models;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,11 @@ namespace BlogMVCApp.Controllers
         public ActionResult Tags()
         {
             return View(_blogDbContext.GetTagsData());
+        }
+
+        public ActionResult PopularArticle()
+        {
+            return View(_blogDbContext.GetPopularArticlesData());
         }
 
         public ActionResult Travel()

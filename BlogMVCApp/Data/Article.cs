@@ -30,7 +30,7 @@ namespace BlogMVCApp.Data
         [Required]
         public string ShortDescription { get; set; }
 
-        public uint ViewCount { get; set; }
+        public int ViewCount { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
 

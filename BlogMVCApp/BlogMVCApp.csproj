@@ -193,8 +193,13 @@
     <Compile Include="Migrations\202102261735241_CategoryUpdated_ArticlesAdded.designer.cs">
       <DependentUpon>202102261735241_CategoryUpdated_ArticlesAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102280848514_SomePartialsAdded.cs" />
+    <Compile Include="Migrations\202102280848514_SomePartialsAdded.designer.cs">
+      <DependentUpon>202102280848514_SomePartialsAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ArticleIndexModel.cs" />
+    <Compile Include="Models\ArticlePopularModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -234,7 +239,11 @@
     <Content Include="Views\Shared\_SingleArticlePartial.cshtml" />
     <Content Include="Views\Home\Categories.cshtml" />
     <Content Include="Views\Home\Tags.cshtml" />
-    <Content Include="Views\Shared\_PopularArticlePartial.cshtml" />
+    <Content Include="Views\Home\PopularArticle.cshtml" />
+    <Content Include="Views\Shared\_ArchivesPartial.cshtml" />
+    <Content Include="Views\Shared\_SideBarNewsLetter.cshtml" />
+    <Content Include="Views\Shared\_SideBarParagraphBottom.cshtml" />
+    <Content Include="Views\Shared\_SideBarSearchTop.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -257,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102261735241_CategoryUpdated_ArticlesAdded.resx">
       <DependentUpon>202102261735241_CategoryUpdated_ArticlesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102280848514_SomePartialsAdded.resx">
+      <DependentUpon>202102280848514_SomePartialsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
