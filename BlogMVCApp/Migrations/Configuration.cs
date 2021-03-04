@@ -24,8 +24,8 @@
                         Id = 1,
                         IsActive = true,
                         Name = "Travel",
-                        ControllerName = "Home",
-                        ActionName = "Travel",
+                        ControllerName = "Travel",
+                        ActionName = "Index",
                         Order = 1
                     },
                      new Data.Menu
@@ -33,8 +33,8 @@
                          Id = 2,
                          IsActive = true,
                          Name = "Fashion",
-                         ControllerName = "Home",
-                         ActionName = "Travel",
+                         ControllerName = "Fashion",
+                         ActionName = "Index",
                          Order = 2
                      },
                       new Data.Menu
@@ -42,8 +42,8 @@
                           Id = 3,
                         IsActive = true,
                           Name = "About",
-                          ControllerName = "Home",
-                          ActionName = "Travel",
+                          ControllerName = "About",
+                          ActionName = "Index",
                           Order = 3
                       },
                        new Data.Menu
@@ -51,8 +51,8 @@
                            Id = 4,
                            IsActive = true,
                            Name = "Contact",
-                           ControllerName = "Home",
-                           ActionName = "Travel",
+                           ControllerName = "Contact",
+                           ActionName = "Index",
                            Order = 4
                        }
                 );
@@ -74,7 +74,9 @@
             context.Authors.AddOrUpdate(new Author
             {
                 UserId = 1,
-                Id = 1
+                Id = 1,
+                ProfilePicture = "person_1.jpg",
+                Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. A small river named Duden flows by their place and supplies it with the necessary regelialia"
             });
 
             context.Articles.AddOrUpdate(
