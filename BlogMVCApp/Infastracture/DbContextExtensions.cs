@@ -26,6 +26,7 @@ namespace BlogMVCApp.Infastracture
                                                         Title = x.Title,
                                                         CommentsCount = x.Comments.Count,
                                                         AuthorName = x.Author.User.UserName,
+                                                        ViewCount = (int)x.ViewCount
                                                     }).ToList();
 
         }
@@ -61,6 +62,24 @@ namespace BlogMVCApp.Infastracture
                                                         CommentsCount = x.Comments.Count,
                                                         AuthorName = x.Author.User.UserName
                                                     }).ToList();
+        }
+
+        public static IEnumerable<ArticleTravelModel> GetPaginatableTravelArticlesData(this BlogDbContext _blogDbContext, int page, int _ItemPerPage)
+        {
+            return _blogDbContext.Articles.OrderByDescending(art => art.WrittenTime).
+                                                    Skip((page - 1) * _ItemPerPage).Take(_ItemPerPage).
+                                                    Select(x => new ArticleTravelModel
+                                                    {
+                                                        Id = x.Id,
+                                                        ImagePath = x.ImagePath,
+                                                        WrittenTime = x.WrittenTime,
+                                                        Title = x.Title,
+                                                        CommentsCount = x.Comments.Count,
+                                                        AuthorName = x.Author.User.UserName,
+                                                        //AuthorPicture = x.Author.ProfilePicture,
+                                                        ViewCount = x.ViewCount
+                                                    }).ToList();
+
         }
     }
 }
