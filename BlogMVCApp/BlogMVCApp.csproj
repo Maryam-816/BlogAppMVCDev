@@ -163,8 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FashionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Data\Article.cs" />
     <Compile Include="Data\Author.cs" />
     <Compile Include="Data\BlogDbContext.cs" />
@@ -197,9 +199,18 @@
     <Compile Include="Migrations\202102280848514_SomePartialsAdded.designer.cs">
       <DependentUpon>202102280848514_SomePartialsAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102281329203_ToAuthorAddedProPic_Description.cs" />
+    <Compile Include="Migrations\202102281329203_ToAuthorAddedProPic_Description.designer.cs">
+      <DependentUpon>202102281329203_ToAuthorAddedProPic_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103040739501_GetPaginatableArticlesData_added.cs" />
+    <Compile Include="Migrations\202103040739501_GetPaginatableArticlesData_added.designer.cs">
+      <DependentUpon>202103040739501_GetPaginatableArticlesData_added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ArticleIndexModel.cs" />
     <Compile Include="Models\ArticlePopularModel.cs" />
+    <Compile Include="Models\ArticleTravelModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,6 +255,9 @@
     <Content Include="Views\Shared\_SideBarNewsLetter.cshtml" />
     <Content Include="Views\Shared\_SideBarParagraphBottom.cshtml" />
     <Content Include="Views\Shared\_SideBarSearchTop.cshtml" />
+    <Content Include="Views\Fashion\Index.cshtml" />
+    <Content Include="Views\Travel\Index.cshtml" />
+    <Content Include="Views\Shared\_SingleArticleTravelPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,6 +283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102280848514_SomePartialsAdded.resx">
       <DependentUpon>202102280848514_SomePartialsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102281329203_ToAuthorAddedProPic_Description.resx">
+      <DependentUpon>202102281329203_ToAuthorAddedProPic_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103040739501_GetPaginatableArticlesData_added.resx">
+      <DependentUpon>202103040739501_GetPaginatableArticlesData_added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
