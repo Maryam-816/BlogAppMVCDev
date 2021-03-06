@@ -26,7 +26,7 @@ namespace BlogMVCApp.Infastracture
                                                         Title = x.Title,
                                                         CommentsCount = x.Comments.Count,
                                                         AuthorName = x.Author.User.UserName,
-                                                        ViewCount = (int)x.ViewCount
+                                                       // ViewCount = x.ViewCount
                                                     }).ToList();
 
         }

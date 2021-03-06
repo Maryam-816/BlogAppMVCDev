@@ -13,10 +13,10 @@ namespace BlogMVCApp.Data
         [StringLength(maximumLength: 100, MinimumLength = 1)]
         public string Text { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int UserId { get; set; }
 
-        public Article Article { get; set; }
+        public virtual Article Article { get; set; }
         public int ArticleId { get; set; }
     }
 }

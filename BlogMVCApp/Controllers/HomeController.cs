@@ -28,20 +28,25 @@ namespace BlogMVCApp.Controllers
 
         public ActionResult Categories()
         {
-            return View(_blogDbContext.GetCategoriesData());
+            return View(_blogDbContext.GetCategoriesData().ToList());
         }
 
         public ActionResult Tags()
         {
-            return View(_blogDbContext.GetTagsData());
+            return View(_blogDbContext.GetTagsData().ToList());
         }
 
         public ActionResult PopularArticle()
         {
-            return View(_blogDbContext.GetPopularArticlesData());
+            return View(_blogDbContext.GetPopularArticlesData().ToList());
         }
 
         public ActionResult Travel()
+        {
+            return View();
+        }
+
+        public ActionResult Error()
         {
             return View();
         }

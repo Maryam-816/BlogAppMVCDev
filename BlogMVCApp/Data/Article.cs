@@ -13,7 +13,7 @@ namespace BlogMVCApp.Data
         [StringLength(maximumLength: 80, MinimumLength = 2)]
         public string Title { get; set; }
 
-        public Author Author { get; set; }
+        public virtual Author Author { get; set; }
 
         public int AuthorId { get; set; }
 
@@ -30,16 +30,23 @@ namespace BlogMVCApp.Data
         [Required]
         public string ShortDescription { get; set; }
 
-        public uint ViewCount { get; set; }
+        public int ViewCount { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
-        public ICollection<Tag> Tags { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
 
-        public ICollection<Category> Catigories { get; set; }
+        public virtual ICollection<Category> Catigories { get; set; }
 
-        public Menu Menu { get; set; }
+        public virtual Menu Menu { get; set; }
 
         public int MenuId { get; set; }
+
+        public Article()
+        {
+            Comments = new HashSet<Comment>();
+            Tags = new HashSet<Tag>();
+            Catigories = new HashSet<Category>();
+        }
     }
 }

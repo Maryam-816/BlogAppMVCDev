@@ -15,7 +15,7 @@ namespace BlogMVCApp.Models
         public string ShortDescription { get; set; }
         public int AuthorPicture { get; set; }
         public string AuthorName { get; set; }
-        public uint ViewCount { get; set; }
+        public int ViewCount { get; set; }
         public int CommentsCount { get; set; }
     }
 }

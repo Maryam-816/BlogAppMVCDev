@@ -10,6 +10,9 @@ namespace BlogMVCApp.Data
     {
         public int Id { get; set; }
         public User User { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
         [Required]
         public int UserId { get; set; }
         public ICollection<Article> Articles { get; set; }
