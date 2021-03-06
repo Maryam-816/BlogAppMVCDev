@@ -2,16 +2,18 @@
 using BlogMVCApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace BlogMVCApp.Infastracture
 {
     public static class DbContextExtensions
     {
-        public static IEnumerable<ArticleIndexModel> GetPaginatableArticlesData(this BlogDbContext _blogDbContext, int page, int _ItemPerPage)
+        public static async Task<IEnumerable<ArticleIndexModel>> GetPaginatableArticlesDataAsync(this BlogDbContext _blogDbContext, int page, int _ItemPerPage)
         {
-            return _blogDbContext.Articles.OrderByDescending(art => art.PublishTime).
+            return await _blogDbContext.Articles.OrderByDescending(art => art.PublishTime).
                                                     Skip((page - 1) * _ItemPerPage).Take(_ItemPerPage).
                                                     Select(x => new ArticleIndexModel
                                                     {
@@ -27,7 +29,7 @@ namespace BlogMVCApp.Infastracture
                                                         CommentsCount = x.Comments.Count,
                                                         AuthorName = x.Author.User.UserName,
                                                        // ViewCount = x.ViewCount
-                                                    }).ToList();
+                                                    }).ToListAsync();
 
         }
 
@@ -64,9 +66,9 @@ namespace BlogMVCApp.Infastracture
                                                     }).ToList();
         }
 
-        public static IEnumerable<ArticleTravelModel> GetPaginatableTravelArticlesData(this BlogDbContext _blogDbContext, int page, int _ItemPerPage)
+        public static async Task<IEnumerable<ArticleTravelModel>> GetPaginatableTravelArticlesDataAsync(this BlogDbContext _blogDbContext, int page, int _ItemPerPage)
         {
-            return _blogDbContext.Articles.OrderByDescending(art => art.WrittenTime).
+            return await _blogDbContext.Articles.OrderByDescending(art => art.WrittenTime).
                                                     Skip((page - 1) * _ItemPerPage).Take(_ItemPerPage).
                                                     Select(x => new ArticleTravelModel
                                                     {
@@ -78,7 +80,7 @@ namespace BlogMVCApp.Infastracture
                                                         AuthorName = x.Author.User.UserName,
                                                         //AuthorPicture = x.Author.ProfilePicture,
                                                         ViewCount = x.ViewCount
-                                                    }).ToList();
+                                                    }).ToListAsync();
 
         }
     }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -18,9 +19,9 @@ namespace BlogMVCApp.Controllers
             _ItemPerPage = 4;
         }
         // GET: Fashion
-        public ActionResult Index(int page = 1)
+        public async Task<ActionResult> Index(int page = 1)
         {
-            return View(_blogDbContext.GetPaginatableArticlesData(page, _ItemPerPage));
+            return View(await _blogDbContext.GetPaginatableArticlesDataAsync(page, _ItemPerPage));
         }
     }
 }
