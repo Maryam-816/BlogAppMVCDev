@@ -76,7 +76,9 @@
                 UserId = 1,
                 Id = 1,
                 ProfilePicture = "person_1.jpg",
-                Description = "A small river named Duden flows by their place and supplies it with the necessary regelialia. A small river named Duden flows by their place and supplies it with the necessary regelialia"
+                Description = "John Smith (baptized. 6 January 1580 – 21 June 1631) was an English soldier, explorer, colonial governor, Admiral of New England, and author. He played an important role in the establishment of the colony at Jamestown, Virginia, the first permanent English settlement in America in the early 17th century. He was a leader of the Virginia Colony between September 1608 and August 1609, and he led an exploration along the rivers of Virginia and the Chesapeake Bay, during which he became the first English explorer to map the Chesapeake Bay area",
+                Name = "John",
+                Surname = "Smith"
             });
 
             context.Articles.AddOrUpdate(
