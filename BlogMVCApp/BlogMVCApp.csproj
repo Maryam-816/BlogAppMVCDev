@@ -219,6 +219,14 @@
     <Compile Include="Migrations\202103061700483_DbOpdated.Designer.cs">
       <DependentUpon>202103061700483_DbOpdated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103070740037_Comment_User_Updated.cs" />
+    <Compile Include="Migrations\202103070740037_Comment_User_Updated.Designer.cs">
+      <DependentUpon>202103070740037_Comment_User_Updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103070752422_CommentDate_Added.cs" />
+    <Compile Include="Migrations\202103070752422_CommentDate_Added.Designer.cs">
+      <DependentUpon>202103070752422_CommentDate_Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ArticleDetailsModel.cs" />
     <Compile Include="Models\ArticleIndexModel.cs" />
@@ -226,6 +234,7 @@
     <Compile Include="Models\ArticleTravelModel.cs" />
     <Compile Include="Models\AuthorModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -274,6 +283,8 @@
     <Content Include="Views\Shared\_SingleArticleTravelPartial.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Shared\_CommentPartial.cshtml" />
+    <Content Include="Views\Shared\_CommentsFormPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -314,6 +325,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103061700483_DbOpdated.resx">
       <DependentUpon>202103061700483_DbOpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103070740037_Comment_User_Updated.resx">
+      <DependentUpon>202103070740037_Comment_User_Updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103070752422_CommentDate_Added.resx">
+      <DependentUpon>202103070752422_CommentDate_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

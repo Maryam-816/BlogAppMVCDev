@@ -1,0 +1,16 @@
+﻿@model  BlogMVCApp.Models.CommentModel
+       @{ 
+           var comment = Model;
+       }
+
+<li class="comment">
+    <div class="vcard bio">
+        <img src="Content/images/@comment.User.ProfilePicture" alt="Image placeholder">
+    </div>
+    <div class="comment-body">
+        <h3>@comment.User.UserName</h3>
+        <div class="meta">@comment.CommentDate</div>
+        <p>@comment.Text</p>
+        <p><a href="#" class="reply">Reply</a></p>
+    </div>
+</li>
