@@ -14,9 +14,16 @@ namespace BlogMVCApp.Data
         [MaxLength(1000)]
         public string Text { get; set; }
         [Required]
+        [MaxLength(80)]
+        public string Name { get; set; }
+        [Required]
         [EmailAddress]
         [MaxLength(50)]
         public string Email { get; set; }
+        public string UserImage { get; set; }
+
+        [Column(TypeName = "smalldatetime")]
+        public DateTime CommentDate { get; set; }
         public string WebSite { get; set; }
         public virtual User User { get; set; }
         public int UserId { get; set; }

@@ -3,28 +3,32 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row d-flex">
+    <div class="col-xl-8 py-5 px-md-5">
+        <div class="row pt-md-4">
 
-<div class="col-xl-8 py-5 px-md-5">
-    <div class="row pt-md-4">
-
-        @foreach (var article in Model)
-        {
-            Html.RenderPartial("_SingleArticlePartial", article);
-        }
-    </div><!-- END-->
-    <div class="row">
-        <div class="col">
-            <div class="block-27">
-                <ul>
-                    <li><a href="#">&lt;</a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&gt;</a></li>
-                </ul>
+            @foreach (var article in Model)
+            {
+                Html.RenderPartial("_SingleArticlePartial", article);
+            }
+        </div><!-- END-->
+        <div class="row">
+            <div class="col">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+    <!--Fashion-->

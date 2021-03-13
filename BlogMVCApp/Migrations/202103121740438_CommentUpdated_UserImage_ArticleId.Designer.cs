@@ -7,13 +7,13 @@ namespace BlogMVCApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CommentDate_Added : IMigrationMetadata
+    public sealed partial class CommentUpdated_UserImage_ArticleId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CommentDate_Added));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CommentUpdated_UserImage_ArticleId));
         
         string IMigrationMetadata.Id
         {
-            get { return "202103070752422_CommentDate_Added"; }
+            get { return "202103121740438_CommentUpdated_UserImage_ArticleId"; }
         }
         
         string IMigrationMetadata.Source

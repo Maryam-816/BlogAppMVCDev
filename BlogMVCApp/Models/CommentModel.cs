@@ -21,6 +21,7 @@ namespace BlogMVCApp.Models
         public string WebSite { get; set; }
         [Column(TypeName = "smalldatetime")]
         public DateTime CommentDate { get; set; }
+        public int ArticleId { get; set; }
         public virtual User User { get; set; }
         public virtual Article Article { get; set; }
     }

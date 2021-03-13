@@ -1,4 +1,5 @@
 ﻿using BlogMVCApp.Models;
+using BlogMVCApp.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace BlogMVCApp.Controllers
 {
     public class ArticlesController : Controller
     {
-        private Data.BlogDbContext _blogDbContext;
+        private BlogDbContext _blogDbContext;
         private int _ItemPerPage;
 
         public ArticlesController()
@@ -45,9 +46,16 @@ namespace BlogMVCApp.Controllers
                     Id = t.Id,
                     Name = t.Name
                 }).ToList(),
-                Comments = article.Comments.Select(s => new CommentModel
+                Comments = article.Comments.Select(c => new CommentModel
                 {
-
+                    Id = c.Id,
+                    CommentDate = c.CommentDate,
+                    Text = c.Text,
+                    Email = c.Email,
+                    WebSite = c.WebSite,
+                    ArticleId = c.ArticleId,
+                    User = c.User,
+                    Article = c.Article
                 }).ToList()
             };
 

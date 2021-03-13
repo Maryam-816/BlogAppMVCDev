@@ -1,9 +1,10 @@
 ﻿@model BlogMVCApp.Models.ArticleDetailsModel
-
+@using BlogMVCApp.Models;
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var article = Model;
+    var comment = new CommentModel {ArticleId = article.Id};
 }
 
 <div class="col-lg-8 px-md-5 py-5">
@@ -42,7 +43,7 @@
 
 
         <div class="pt-5 mt-5">
-            <h3 class="mb-5 font-weight-bold">6 Comments</h3>
+            <h3 class="mb-5 font-weight-bold">@article.Comments.Count() Comments</h3>
             <ul class="comment-list">
                 @if (article.Comments.Any())
                 {
@@ -56,7 +57,7 @@
 
             <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
-                @{ Html.RenderPartial("_CommentsFormPartial"); }
+                @{ Html.RenderPartial("_CommentsFormPartial", comment); }
                
             </div>
         </div>

@@ -116,6 +116,7 @@
     <Content Include="Content\images\about.jpg" />
     <Content Include="Content\images\author.jpg" />
     <Content Include="Content\images\bg_1.jpg" />
+    <Content Include="Content\images\default_pic.jpg" />
     <Content Include="Content\images\image_1.jpg" />
     <Content Include="Content\images\image_10.jpg" />
     <Content Include="Content\images\image_11.jpg" />
@@ -162,7 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FashionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
@@ -223,9 +227,9 @@
     <Compile Include="Migrations\202103070740037_Comment_User_Updated.Designer.cs">
       <DependentUpon>202103070740037_Comment_User_Updated.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202103070752422_CommentDate_Added.cs" />
-    <Compile Include="Migrations\202103070752422_CommentDate_Added.Designer.cs">
-      <DependentUpon>202103070752422_CommentDate_Added.cs</DependentUpon>
+    <Compile Include="Migrations\202103121740438_CommentUpdated_UserImage_ArticleId.cs" />
+    <Compile Include="Migrations\202103121740438_CommentUpdated_UserImage_ArticleId.Designer.cs">
+      <DependentUpon>202103121740438_CommentUpdated_UserImage_ArticleId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ArticleDetailsModel.cs" />
@@ -285,6 +289,8 @@
     <Content Include="Views\Articles\Details.cshtml" />
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\Shared\_CommentsFormPartial.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -294,6 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Comments\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202102191841485_Initial.resx">
@@ -329,8 +336,8 @@
     <EmbeddedResource Include="Migrations\202103070740037_Comment_User_Updated.resx">
       <DependentUpon>202103070740037_Comment_User_Updated.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103070752422_CommentDate_Added.resx">
-      <DependentUpon>202103070752422_CommentDate_Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103121740438_CommentUpdated_UserImage_ArticleId.resx">
+      <DependentUpon>202103121740438_CommentUpdated_UserImage_ArticleId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
