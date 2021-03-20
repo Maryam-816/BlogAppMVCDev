@@ -186,6 +186,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infastracture\DbContextExtensions.cs" />
+    <Compile Include="Infastracture\DbSetExtensions.cs" />
     <Compile Include="Migrations\202102191841485_Initial.cs" />
     <Compile Include="Migrations\202102191841485_Initial.designer.cs">
       <DependentUpon>202102191841485_Initial.cs</DependentUpon>
@@ -269,7 +270,8 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Validation.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Success.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Error.cshtml" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>

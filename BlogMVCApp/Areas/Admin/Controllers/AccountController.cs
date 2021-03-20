@@ -1,8 +1,10 @@
 ﻿using BlogMVCApp.Areas.Admin.Data;
+using BlogMVCApp.Infastracture;
 using BlogMVCApp.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -26,23 +28,36 @@ namespace BlogMVCApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model)
+        public async Task<ActionResult> Login(LoginModel model)
         {
             if (ModelState.IsValid)
             {
-                User user = _blogDbContext.Users.Where(x => x.Email == model.Email && x.Password == model.Password).FirstOrDefault();
+                User user = await _blogDbContext.Users.GetUserAsync(model);
                 if (user == null)
                 {
-                    //fail
                     ModelState.AddModelError("", "Given email or password is wrong!");
-                    return RedirectToAction("Index", "Account");
+                    return View();
                 }
                 else
-                {
-                    //success
-                }
+                    Session.Add("userInfo", user.Email);
+                    return RedirectToAction(nameof(Success));
             }
+            return RedirectToAction(nameof(Error));
+        }
+
+        public ActionResult Error()
+        {
             return View();
+        }
+
+        public ActionResult Success()
+        {
+            if (Session["userInfo"] == null)
+                return RedirectToAction(nameof(Index));
+
+            else
+                return View();
+
         }
     }
 }
