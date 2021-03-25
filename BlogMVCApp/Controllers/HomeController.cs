@@ -25,6 +25,7 @@ namespace BlogMVCApp.Controllers
         [ActionName("Index")]
         public async Task<ActionResult> IndexAsync(int page = 1)
         {
+            ViewBag.Title = "Home";
             return  View(await _blogDbContext.GetPaginatableArticlesDataAsync(page, _ItemPerPage));
         }
 

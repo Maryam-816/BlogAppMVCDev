@@ -23,6 +23,7 @@ namespace BlogMVCApp.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            ViewBag.Title = "Login Page";
             return View();
         }
 
