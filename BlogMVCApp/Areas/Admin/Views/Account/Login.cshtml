@@ -5,8 +5,12 @@
 }
 
 <style>
-    .field-validation-error{
+    .field-validation-error, .validation-summary, .validation-summary-errors{
         color: #ff0000;
+    }
+    .validation-summary-errors {
+        padding: 0;
+        list-style-type: none;
     }
 </style>
 
@@ -28,9 +32,8 @@
         <div class="form-group">
             <input type="submit" value="Login" class="btn btn-primary py-3 px-5">
         </div>
-        <section>
+
             @Html.ValidationSummary()
-        </section>
         
     }
 

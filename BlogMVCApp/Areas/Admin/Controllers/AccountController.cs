@@ -21,7 +21,7 @@ namespace BlogMVCApp.Areas.Admin.Controllers
         }
         // GET: Admin/Account
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
@@ -35,7 +35,7 @@ namespace BlogMVCApp.Areas.Admin.Controllers
                 User user = await _blogDbContext.Users.GetUserAsync(model);
                 if (user == null)
                 {
-                    ModelState.AddModelError("", "Given email or password is wrong!");
+                    ModelState.AddModelError("", "This user doesn't exist");
                     return View();
                 }
                 else
