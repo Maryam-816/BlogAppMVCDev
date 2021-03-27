@@ -19,7 +19,7 @@
         </p>
         <div class="tag-widget post-tag-container mb-5 mt-5">
             <div class="tagcloud">
-                @if (article.Tags.Any())
+                @if (article.Tags.Add())
                 {
                     foreach (var tag in article.Tags)
                     {
@@ -43,9 +43,9 @@
 
 
         <div class="pt-5 mt-5">
-            <h3 class="mb-5 font-weight-bold">@article.Comments.Count() Comments</h3>
+            <h3 class="mb-5 font-weight-bold">@article.Comments.Count Comments</h3>
             <ul class="comment-list">
-                @if (article.Comments.Any())
+                @if (article.Comments.Add())
                 {
                     foreach (var com in article.Comments)
                     {
@@ -58,7 +58,56 @@
             <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
                 @{ Html.RenderPartial("_CommentsFormPartial", comment); }
-               
+                @section AjaxQuery
+        {
+        <script>
+            $(document).ready(function () {
+                $("#send_request_btn").click(function (e) {
+                    e.preventDefault();
+                    alert("request");
+                    let request = {
+                        name: $("#Name").val,
+                        email: $("#Email").val,
+                        website: $("#Website").val,
+                        text: $("#Text").val,
+                        articleId: $("#ArticleId").val,
+                        userImage: $("UserImage")
+                    };
+                    console.log(request);
+                    alert("request")
+                    $.ajax(
+                        {
+                            url: Url.Action("Add", "Comments"),
+                            type: "POST",
+                            dataType: 'json',
+                            data: request
+                        })
+                        .done(function (e)
+                        {
+                            console.log(e);
+                            let responceHtml = `<li class='comment'>
+                                                <div class="vcard bio">
+                                                    <img src="/Content/images/${e.userImage}" alt="Image placeholder">
+                                                </div>
+                                                <div class="comment-body">
+                                                    <h3>${e.name}</h3>
+                                                    <div class="meta">${e.commentDate}</div>
+                                                    <p>${e.text}</p>
+                                                    <p> <a href="#" class="reply">Reply</a> </p>
+                                                </div>
+                                                </li>`;
+                            $(".comment-list").append(responceHtml);
+                        })
+                        .fail(function ()
+                        {
+                            alert("responce failed" + e);
+                        })
+                });
+            });
+
+
+        </script>
+        }
             </div>
         </div>
     </div>

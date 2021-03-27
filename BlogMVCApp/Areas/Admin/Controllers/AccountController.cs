@@ -54,7 +54,7 @@ namespace BlogMVCApp.Areas.Admin.Controllers
         public ActionResult Success()
         {
             if (Session["userInfo"] == null)
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Login));
 
             else
                 return View();

@@ -1,5 +1,6 @@
 ﻿@model BlogMVCApp.Models.CommentModel
-@using (Html.BeginForm("Add", "Comments", FormMethod.Post, new { @class = "p-3 p-md-5 bg-light" }))
+
+@using (Html.BeginForm(new { @class = "p-3 p-md-5 bg-light", @id="submit_form"}))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(x => x.Article.Id)
@@ -21,6 +22,35 @@
         @Html.TextAreaFor(x => x.Text, rows:10, columns:10, htmlAttributes: new { @class = "form-control" })
     </div>
     <div class="form-group">
-        <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+        <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary" id="send_request_btn">
     </div>
 }
+
+@*@section AjaxQuery
+    {
+    <script>
+        $(document).ready(function () {
+            $("#send_request_btn").click(function (e) {
+                e.preventDefault();
+                alert("request");
+                let request = {name: $("#Name").val, email: $("#Email").val, website: $("#Website").val, text: $("#Text").val, articleId: $("#ArticleId").val};
+                $.ajax(
+                    {
+                        url: "/Comments/Add",
+                        method: "POST",
+                        data: request
+                    })
+                    .done(function (e)
+                    {
+                        alert("responce recieved" + e);
+                    })
+                    .fail(function ()
+                    {
+                        alert("responce failed" + e);
+                    })
+            });
+        });
+
+        
+    </script>
+    }*@
