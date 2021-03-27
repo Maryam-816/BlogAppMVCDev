@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BlogMVCApp.Filters;
 
 namespace BlogMVCApp.Areas.Admin.Controllers
 {
@@ -51,14 +52,10 @@ namespace BlogMVCApp.Areas.Admin.Controllers
             return View();
         }
 
+        [MyAuthorizationFilter(nameof(Login))]
         public ActionResult Success()
         {
-            if (Session["userInfo"] == null)
-                return RedirectToAction(nameof(Login));
-
-            else
                 return View();
-
         }
     }
 }

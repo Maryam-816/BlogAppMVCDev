@@ -182,6 +182,7 @@
     <Compile Include="Data\Menu.cs" />
     <Compile Include="Data\Tag.cs" />
     <Compile Include="Data\User.cs" />
+    <Compile Include="Filters\MyAuthorizationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
