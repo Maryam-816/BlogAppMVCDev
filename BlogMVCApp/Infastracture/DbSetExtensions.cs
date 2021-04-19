@@ -18,9 +18,6 @@ namespace BlogMVCApp.Infastracture
             else
                 return await _users.Where(x => x.Email == loginModel.Email && x.Password == loginModel.Password).SingleOrDefaultAsync();
 
-
-
-
         }
     }
 }
