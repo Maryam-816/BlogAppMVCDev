@@ -15,7 +15,7 @@
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(BlogMVCApp.Data.BlogDbContext context)
+        protected override void Seed(BlogDbContext context)
         {
                 context.Menus.AddOrUpdate
                 (
